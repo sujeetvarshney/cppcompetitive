@@ -1,0 +1,25 @@
+ int missingNumber(vector<int>& nums) {
+        int found=0;
+            sort(nums.begin(), nums.end());
+        int res;
+        if(nums[0]>0)
+        {
+            res=0;
+            found=1;
+        }
+        
+        for(int x=0;x<nums.size()-1;x++)
+        {
+            
+            if(nums[x+1]-nums[x]!=1)
+            {
+                res=nums[x]+1;
+                found=1;
+                break;
+            }
+        }
+        if(found==0)
+        res=nums[nums.size()-1]+1;
+        return res;
+
+    }
